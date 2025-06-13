@@ -1,4 +1,4 @@
-from mastobot import (
+from masto_cli import (
     login, auth, get_id_info, get_username_info,
     get_following, get_followers, get_timeline,
     Publish
@@ -38,4 +38,4 @@ with open('login.json', 'r') as user:
 
 media_path = ["assets/wpp.jpg", "assets/wpp2.jpg"]
 
-# Publish(text="Send status from python", media_path= media_path).status()
+Publish(text="hi").status()

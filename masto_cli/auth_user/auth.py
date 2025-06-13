@@ -1,4 +1,4 @@
-from mastobot import http_client
+from masto_cli import http_client
 import re
 
 class CookieError(Exception):
