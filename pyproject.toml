@@ -3,7 +3,7 @@ requires = ["setuptools>=70.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mastobot"
+name = "masto-cli"
 version = "0.1.0"
 description = "Mastodon wrapper"
 authors = [
@@ -12,19 +12,17 @@ authors = [
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
-
-[project]
 dependencies = [
-    "beautifulsoup4==4.13.4",
-    "bs4==0.0.2",
-    "certifi==2025.4.26",
-    "charset-normalizer==3.4.2",
-    "idna==3.10",
-    "requests==2.32.3",
-    "soupsieve==2.7",
-    "typing_extensions==4.14.0",
-    "urllib3==2.4.0"
+  "beautifulsoup4==4.13.4",
+  "bs4==0.0.2",
+  "certifi==2025.4.26",
+  "charset-normalizer==3.4.2",
+  "idna==3.10",
+  "requests==2.32.3",
+  "soupsieve==2.7",
+  "typing_extensions==4.14.0",
+  "urllib3==2.4.0"
 ]
 
 [tool.setuptools.packages.find]
-where = ["mastobot"]
+where = ["masto-cli"]

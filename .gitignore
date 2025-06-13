@@ -1,4 +1,13 @@
 __pycache__/
+*.py[cod]
+*.so
+
 venv/
+
+dist/
+*.egg-info/
+build/
+
 .vscode/
+
 login.json
