@@ -1,4 +1,4 @@
-from . import http_client, api
+from masto_cli import http_client, api
 import json, re
 
 login = json.load(open('login.json', 'r'))

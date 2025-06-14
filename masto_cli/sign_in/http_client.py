@@ -1,6 +1,5 @@
 import requests
 
-
 session = requests.Session()
 
 def rq_get(url, headers= None):
