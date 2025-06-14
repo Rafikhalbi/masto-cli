@@ -1,9 +1,9 @@
-from . import http_client, login
+from . import http_client, login, api
 import json
 
 def get_timeline() -> dict:
     """ get home time line """
-    url = "https://mastodon.social/api/v1/timelines/home"
+    url = f"{api}/v1/timelines/home"
     response = http_client.rq_get(
         url= url, headers= login
     )
@@ -11,7 +11,7 @@ def get_timeline() -> dict:
 
 def get_post_info(post_id: str) -> dict:
     """ get post information """
-    url = 'https://mastodon.social/api/v1/statuses/{post_id}/context'
+    url = f'{api}/v1/statuses/{post_id}/context'
     response = http_client.rq_get(
         url= url, headers= login
     )

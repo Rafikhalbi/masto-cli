@@ -1,4 +1,4 @@
-from .. import login, http_client
+from .. import login, http_client, api
 import json
 
 class Publish:
@@ -13,8 +13,8 @@ class Publish:
         self.login = login
         self.path = media_path
         self.text = text
-        self.media_upload_url = 'https://mastodon.social/api/v2/media'
-        self.upload_status = 'https://mastodon.social/api/v1/statuses'
+        self.media_upload_url = f'{api}/v2/media'
+        self.upload_status = f'{api}/v1/statuses'
         self.total_upload = []
 
     def upload_media(self) -> list:
@@ -32,14 +32,14 @@ class Publish:
                 self.total_upload.append(json.loads(response.text)['id'])
         return (self.total_upload)
 
-    def status(self) -> list:
+    def status(self, reply_id: str = None) -> list:
         """
         creates a new status (post) on Mastodon.
         if media is included, it uploads the media first and attaches it to the post
         """
         data = {
             "status": self.text,
-            "in_reply_to_id": None,
+            "in_reply_to_id": reply_id,
             "sensitive": False,
             "spoiler_text": "",
             "visibility": "public",
@@ -53,3 +53,7 @@ class Publish:
             self.upload_status, headers=self.login, json=data
         )
         return (json.loads(response.text))
+    
+    def reply(self, reply_id: str) -> list:
+        """ reply post from post id """
+        return (self.status(reply_id= reply_id))

@@ -1,7 +1,7 @@
 from masto_cli import (
     login, auth, get_id_info, get_username_info,
     get_following, get_followers, get_timeline,
-    Publish
+    Publish, favourite, follow, unfollow
 )
 import json
 # import colorama
@@ -36,6 +36,9 @@ with open('login.json', 'r') as user:
     else:
         user = signIn("youremail@gmail.com", "password")
 
-media_path = ["assets/wpp.jpg", "assets/wpp2.jpg"]
+# media_path = ["assets/wpp.jpg", "assets/wpp2.jpg"]
 
-Publish(text="hi").status()
+# Publish(text="hi").status()
+# Publish(text="from python.").reply(114674361897817929)
+
+# favourite(114680676815763397)
