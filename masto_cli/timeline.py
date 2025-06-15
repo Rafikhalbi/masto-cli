@@ -1,4 +1,5 @@
-from masto_cli import http_client, login, api
+from masto_cli import http_client, login
+from masto_cli.config import api
 import json
 
 def get_timeline() -> dict:

@@ -1,4 +1,5 @@
-from masto_cli import login, http_client, api
+from masto_cli import login, http_client
+from masto_cli.config import api
 import json
 
 class Publish:

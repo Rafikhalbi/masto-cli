@@ -1,5 +1,6 @@
 from masto_cli import login
-from masto_cli import http_client, api
+from masto_cli import http_client
+from masto_cli.config import api
 import json
 
 def favourite(post_id: str) -> list:
