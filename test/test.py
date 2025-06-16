@@ -36,9 +36,10 @@ with open('login.json', 'r') as user:
     else:
         user = signIn("youremail@gmail.com", "password")
 
-# media_path = ["assets/wpp.jpg", "assets/wpp2.jpg"]
+media_path = ["assets/peter.mp4"]
 
-# Publish(text="hi").status()
-# Publish(text="from python.").reply(114674361897817929)
+p = Publish(text="Test send status from python", media_path= media_path).status()
+print(p)
 
-# favourite(114680676815763397)
+# favourite(114687088183504855)
+# Publish(text="GM @Rafikhalbi").reply(114687088183504855)

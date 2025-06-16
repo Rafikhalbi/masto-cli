@@ -18,6 +18,12 @@ class Publish:
         self.upload_status = f'{api}/v1/statuses'
         self.total_upload = []
 
+    def check_media_id(self, media_id):
+        url = f'{api}/v1/media/{media_id}'
+        print(f'Check upload file {media_id}')
+        response = http_client.rq_get(url=url, headers=self.login)
+        return response.status_code == 200
+
     def upload_media(self) -> list:
         """
         uploads all media files in self.path to Mastodon
@@ -48,7 +54,12 @@ class Publish:
             "language": "en"
         }
         if self.path is not None:
-            data["media_ids"] = self.upload_media()
+            media_id = self.upload_media()
+            for id in media_id:
+                for _ in range(10):
+                    if self.check_media_id(id):
+                        break
+            data["media_ids"] = media_id
             
         response = http_client.rq_post(
             self.upload_status, headers=self.login, json=data

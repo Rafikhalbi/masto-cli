@@ -15,4 +15,4 @@ __all__ = [
     "get_timeline", "get_post_info", "Publish", "favourite"
 ]
 
-__version__ = "0.1.9"
+__version__ = "0.2.0"
